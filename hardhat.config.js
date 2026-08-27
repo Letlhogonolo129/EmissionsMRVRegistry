@@ -1,21 +1,36 @@
-require("@nomicfoundation/hardhat-ethers");
-require("@nomicfoundation/hardhat-chai-matchers");
+require("@nomicfoundation/hardhat-toolbox");
 
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
     version: "0.8.28",
     settings: {
-      optimizer: { enabled: true, runs: 200 },
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
     },
   },
+
+  defaultNetwork: "hardhat",
+
   networks: {
-    // Local node for the MetaMask demo:
-    //   npx hardhat node        (terminal 1)
-    //   npx hardhat run scripts/deploy.js --network localhost   (terminal 2)
+    hardhat: {
+      chainId: 31337,
+    },
     localhost: {
       url: "http://127.0.0.1:8545",
       chainId: 31337,
     },
+  },
+
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts",
+  },
+
+  mocha: {
+    timeout: 40000,
   },
 };
