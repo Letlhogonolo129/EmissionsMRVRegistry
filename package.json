@@ -1,0 +1,20 @@
+{
+  "name": "emissions-mrv-registry",
+  "version": "1.0.0",
+  "description": "Solidity implementation of a blockchain-based MRV registry for industrial GHG emissions reporting",
+  "license": "MIT",
+  "scripts": {
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "demo": "hardhat run scripts/demo.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "chai": "^4.5.0",
+    "ethers": "^6.13.4",
+    "hardhat": "^2.22.17"
+  }
+}
